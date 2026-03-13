@@ -568,3 +568,46 @@ footer {
 
     .modal-iframe { height: 300px; }
 }
+
+/* Liste des objectifs pédagogiques (style sobre) */
+.themes-section .objectives-list {
+    margin-top: 16px;
+    text-align: left;
+    border-left: 3px solid var(--color-border);
+    padding-left: 16px;
+}
+
+.themes-section .objectives-list dt {
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-top: 14px;
+    margin-bottom: 6px;
+}
+
+.themes-section .objectives-list dd {
+    margin: 0 0 10px 0;
+}
+
+.themes-section .objectives-list ul {
+    display: block;              /* annule la grille de .themes-section ul */
+    list-style: disc;
+    margin: 0 0 0 20px;
+    padding: 0;
+    gap: 0;
+}
+
+.themes-section .objectives-list li {
+    display: list-item;          /* annule le flex de .themes-section li */
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 2px 0;
+    color: var(--color-text-soft);
+}
+
+.themes-section .objectives-list li:hover {
+    background: none;
+    border: none;
+    box-shadow: none;
+    transform: none;
+}
