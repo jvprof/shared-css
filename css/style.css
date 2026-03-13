@@ -611,3 +611,68 @@ footer {
     box-shadow: none;
     transform: none;
 }
+
+/* =========================================================
+   INSTRUCTIONS (liste pédagogique sobre)
+   ========================================================= */
+.instructions-list {
+    counter-reset: step;
+    list-style: none;
+    margin: 20px 0 0;
+    padding: 0;
+}
+
+.instructions-list > li {
+    position: relative;
+    margin-bottom: 12px;
+    padding: 14px 16px 14px 52px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--color-primary);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+    color: var(--color-text);
+    line-height: 1.55;
+}
+
+.instructions-list > li::before {
+    counter-increment: step;
+    content: counter(step);
+    position: absolute;
+    left: 14px;
+    top: 13px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: var(--color-surface);
+    font-size: 0.9em;
+    font-weight: 700;
+    display: grid;
+    place-items: center;
+}
+
+/* Supporte votre structure actuelle (ul sibling dans ol) */
+.instructions-list > ul {
+    margin: -4px 0 12px 52px;
+    padding-left: 18px;
+    list-style: disc;
+    color: var(--color-text-soft);
+}
+
+.instructions-list > ul li {
+    margin: 6px 0;
+    line-height: 1.5;
+}
+
+/* Variante si vous imbriquez le ul dans le 2e li (recommandé) */
+.instructions-list > li > ul {
+    margin: 10px 0 0 18px;
+    padding-left: 6px;
+    list-style: disc;
+    color: var(--color-text-soft);
+}
+
+.instructions-list > li > ul li {
+    margin: 6px 0 0;
+}
