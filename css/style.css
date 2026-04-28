@@ -550,7 +550,7 @@ h1 {
 
 /* Ajout : spécifier les listes imbriquées */
 .tips ul ul li::before {
-    content: "→";           /* Flèche au lieu de puce */
+    content: "-";           /* Flèche au lieu de puce */
     left: 0;                /* Position différente */
     top: 4px;
 }
