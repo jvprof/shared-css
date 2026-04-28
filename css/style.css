@@ -548,6 +548,22 @@ h1 {
     top: 12px;
 }
 
+/* Ajout : spécifier les listes imbriquées */
+.tips ul ul li::before {
+    content: "→";           /* Flèche au lieu de puce */
+    left: 0;                /* Position différente */
+    top: 4px;
+}
+
+.tips ul ul {
+    margin-left: 2rem;      /* Plus d'espace */
+    padding-left: 1rem;
+}
+
+.tips ul ul li {
+    padding-left: 1.5rem;   /* Plus de padding */
+}
+
 /* Liens dans les sections */
 .introduction a,
 .objectives a,
