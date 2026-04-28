@@ -550,6 +550,7 @@ h1 {
 
 /* Ajout : spécifier les listes imbriquées */
 .tips ul ul li::before {
+    content: "-";           /* tiret au lieu de puce */
     left: 0;                /* Position différente */
     top: 4px;
 }
