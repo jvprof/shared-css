@@ -834,3 +834,113 @@ footer {
 .instructions-list > li > ul li {
     margin: 6px 0 0;
 }
+
+/* =========================================================
+   SIDEBAR HIERARCHIQUE (pages-education)
+   ========================================================= */
+.page-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.hierarchy-sidebar {
+    display: grid;
+    gap: 16px;
+}
+
+.hierarchy-card {
+    background: var(--color-surface);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 18px;
+    box-shadow: var(--shadow-sm);
+}
+
+.hierarchy-card h3 {
+    margin: 0 0 12px;
+    font-size: 1.1em;
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hierarchy-tree,
+.hierarchy-tree ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+.hierarchy-tree > li {
+    margin-bottom: 12px;
+}
+
+.hierarchy-tree li {
+    color: var(--color-text);
+    line-height: 1.45;
+}
+
+.hierarchy-label {
+    display: inline-block;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+    font-size: 0.98em;
+}
+
+.hierarchy-tree li ul {
+    border-left: 2px solid var(--color-border);
+    margin-left: 8px;
+    padding-left: 12px;
+}
+
+.hierarchy-tree > li > ul > li {
+    margin: 6px 0;
+    padding: 6px 8px;
+    border-radius: 8px;
+    background: #fafbff;
+}
+
+.hierarchy-tree > li > ul > li > a,
+.hierarchy-tree > li > ul > li {
+    font-weight: 600;
+}
+
+.hierarchy-tree > li > ul > li > ul {
+    margin-top: 6px;
+    border-left-style: dashed;
+}
+
+.hierarchy-tree > li > ul > li > ul > li {
+    margin: 5px 0;
+    color: var(--color-text-soft);
+    font-size: 0.95em;
+}
+
+.hierarchy-tree > li > ul > li > ul > li > ul {
+    border-left-color: #d4dbff;
+}
+
+.hierarchy-tree > li > ul > li > ul > li > ul > li {
+    font-size: 0.92em;
+}
+
+.hierarchy-tree a {
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.hierarchy-tree a:hover {
+    text-decoration: underline;
+    color: var(--color-accent);
+}
+
+@media (max-width: 900px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+}
