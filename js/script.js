@@ -63,7 +63,7 @@ document.addEventListener('keydown', function(event) {
 });
 
 // Gestionnaire de clics pour les vidéos - sélecteurs explicites
-document.querySelectorAll('.video-thumbnail, .watch-button, .large-button').forEach(function(element) {
+document.querySelectorAll('.media-item__thumb, .btn-outline, .btn-solid').forEach(function(element) {
     element.addEventListener('click', function(e) {
         e.preventDefault();
         const videoId = this.dataset.videoId;
@@ -77,7 +77,7 @@ document.querySelectorAll('.video-thumbnail, .watch-button, .large-button').forE
 
 // Gestionnaire pour le bouton de fermeture
 document.addEventListener('DOMContentLoaded', function() {
-    const closeButton = document.querySelector('.close');
+    const closeButton = document.querySelector('.overlay__close');
     if (closeButton) {
         closeButton.addEventListener('click', closeVideo);
     }
