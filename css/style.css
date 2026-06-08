@@ -372,6 +372,7 @@ a:hover {
 .step-list > ul li {
     margin: 6px 0;
     list-style: none;
+}
 
 .is-important {
     border-left-color: var(--color-accent) !important;
