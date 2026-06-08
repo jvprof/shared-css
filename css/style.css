@@ -209,7 +209,7 @@ a:hover {
 }
 
 .panel--theme em {
-    display: block;
+    /* display: block; // Forcer à la ligne */
     margin-top: 25px;
     padding-top: 20px;
     border-top: 2px solid var(--color-border-soft);
@@ -371,7 +371,7 @@ a:hover {
 .step-list > li > ul li,
 .step-list > ul li {
     margin: 6px 0;
-}
+    list-style: none;
 
 .is-important {
     border-left-color: var(--color-accent) !important;
