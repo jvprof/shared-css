@@ -425,6 +425,11 @@ a:hover {
     margin-bottom: 50px;
 }
 
+.media-grid--single {
+    grid-template-columns: minmax(300px, 420px);
+    justify-content: center;
+}
+
 .media-item {
     background: var(--color-surface);
     border-radius: var(--radius-md);
