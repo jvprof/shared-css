@@ -12,6 +12,7 @@
     --color-info: #06b6d4;
     --color-bg: #f8f9fa;
     --color-surface: #ffffff;
+    --color-ext: #f7f4cb;
     --color-text: #333333;
     --color-text-soft: #666666;
     --color-text-muted: #555555;
@@ -515,6 +516,7 @@ a:hover {
     transition: all var(--transition-base);
 }
 
+
 .card:hover {
     border-color: var(--color-primary);
     box-shadow: 0 8px 22px rgba(99, 102, 241, 0.18);
@@ -675,6 +677,7 @@ a:hover {
 
 .btn-solid:hover {
     background: var(--color-accent);
+    color: var(--color-surface);
     transform: translateY(-3px);
     box-shadow: 0 6px 16px rgba(99, 102, 241, 0.25);
 }
@@ -741,6 +744,216 @@ a:hover {
     height: 600px;
     border: none;
     border-radius: 0 0 var(--radius-md) var(--radius-md);
+}
+
+/* =========================================================
+   LANDING (INDEX)
+   ========================================================= */
+.landing-hero {
+    background: radial-gradient(circle at 10% 10%, #eef2ff 0%, #ffffff 50%, #fff8f3 100%);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 28px;
+    margin: 0 0 24px;
+    box-shadow: var(--shadow-sm);
+}
+
+.landing-kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.78em;
+    font-weight: 700;
+    color: var(--color-info);
+    margin-bottom: 10px;
+}
+
+.landing-hero h2 {
+    margin: 0 0 10px;
+    font-size: 1.8em;
+    color: #1e293b;
+}
+
+.landing-hero > p {
+    color: #475569;
+    max-width: 900px;
+    line-height: 1.6;
+}
+
+.landing-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.featured {
+    margin: 0 0 24px;
+}
+
+.featured__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.featured__head h2 {
+    margin: 0;
+    font-size: 1.3em;
+    color: var(--color-primary);
+}
+
+.featured__head p {
+    margin: 0;
+    color: var(--color-text-soft);
+    font-size: 0.95em;
+}
+
+.featured__viewport {
+    overflow: hidden;
+    width: 100%;
+    padding-bottom: 8px;
+}
+
+.featured__track {
+    display: flex;
+    gap: 14px;
+    width: max-content;
+    animation: featuredAutoScroll 24s linear infinite;
+}
+
+.featured__viewport:hover .featured__track {
+    animation-play-state: paused;
+}
+
+.featured-card {
+    min-width: min(300px, 78vw);
+    background: var(--color-surface);
+    border: 1px solid #dbe4ee;
+    border-radius: var(--radius-md);
+    padding: 16px;
+    box-shadow: var(--shadow-sm);
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+    animation: featuredCardIn 520ms ease forwards;
+    transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.featured-card-ext {
+    min-width: min(300px, 78vw);
+    background: radial-gradient(circle at 10% 10%, var(--color-ext) 0%, #ffffff 30%, #fff8f3 100%);
+    border: 1px solid #efdf07;
+    border-radius: var(--radius-md);
+    padding: 16px;
+    box-shadow: var(--shadow-sm);
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+    animation: featuredCardIn 520ms ease forwards;
+    transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.featured-card:nth-child(1) { animation-delay: 40ms; }
+.featured-card:nth-child(2) { animation-delay: 110ms; }
+.featured-card:nth-child(3) { animation-delay: 180ms; }
+.featured-card:nth-child(4) { animation-delay: 250ms; }
+
+.featured-card:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.14);
+    border-color: #c7d2fe;
+}
+
+.featured-card--ghost {
+    pointer-events: none;
+}
+
+.featured-card__tag {
+    display: inline-block;
+    font-size: 0.78em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #334155;
+    background: #eef2ff;
+    border-radius: 999px;
+    padding: 4px 8px;
+    margin: 0 0 10px;
+}
+
+.featured-card h3 {
+    margin: 0 0 8px;
+    font-size: 1.05em;
+    color: #1e293b;
+}
+
+.featured-card p {
+    margin: 0 0 10px;
+    color: #64748b;
+    font-size: 0.92em;
+}
+
+.featured-card a {
+    color: var(--color-primary);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.featured-card a:hover {
+    text-decoration: underline;
+}
+
+@keyframes featuredCardIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes featuredAutoScroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(-50% - 7px));
+    }
+}
+
+.landing-nav .nav-sidebar {
+    gap: 12px;
+}
+
+.landing-nav .nav-card {
+    padding: 14px;
+    border-width: 1px;
+}
+
+.landing-nav .nav-card h3 {
+    font-size: 1em;
+    margin: 0 0 10px;
+}
+
+.landing-nav .nav-tree-label {
+    font-size: 0.93em;
+    margin-bottom: 6px;
+}
+
+.landing-nav .nav-tree > li {
+    margin-bottom: 8px;
+}
+
+.landing-nav .nav-tree li {
+    line-height: 1.35;
+    font-size: 0.94em;
+}
+
+.landing-nav .nav-tree > li > ul > li {
+    padding: 5px 7px;
+    margin: 4px 0;
 }
 
 /* =========================================================
@@ -1035,6 +1248,23 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    .landing-hero {
+        padding: 20px;
+    }
+
+    .landing-hero h2 {
+        font-size: 1.35em;
+    }
+
+    .featured__head {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .featured-card {
+        min-width: min(260px, 86vw);
+    }
+
     .overlay__content {
         width: 95%;
         margin: 20% auto;
@@ -1046,5 +1276,27 @@ footer {
 
     .quiz-card {
         padding: 30px 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .featured__viewport {
+        overflow-x: auto;
+    }
+
+    .featured__track {
+        animation: none;
+        width: max-content;
+    }
+
+    .featured-card {
+        animation: none;
+        opacity: 1;
+        transform: none;
+        scroll-snap-align: start;
+    }
+
+    .featured-card:hover {
+        transform: none;
     }
 }
