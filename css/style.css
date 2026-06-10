@@ -41,6 +41,8 @@ body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     background: var(--color-bg);
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     padding: 40px 20px;
     color: var(--color-text);
 }
@@ -48,6 +50,8 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
+    flex: 1 0 auto;
 }
 
 header {
@@ -899,6 +903,8 @@ a:hover {
 .quiz-shell {
     max-width: 800px;
     margin: 0 auto;
+    flex: 1 0 auto;
+    width: 100%;
 }
 
 .quiz-card {
@@ -939,6 +945,8 @@ footer {
     color: #999;
     margin-top: 50px;
     font-size: 0.9em;
+    margin-bottom: 0;
+    margin-top: auto;
 }
 
 /* =========================================================
