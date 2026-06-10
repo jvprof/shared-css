@@ -96,4 +96,4 @@ Si ces classes/attributs changent, mettre a jour `js/script.js` en meme temps.
 
 ## Licence
 
-MIT
+Proprietaire
